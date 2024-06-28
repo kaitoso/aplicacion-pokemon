@@ -1,0 +1,61 @@
+/* You can add global styles to this file, and also import other style files */
+
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+/* Importing Bootstrap SCSS file. */
+@import "bootstrap/scss/bootstrap";
+
+p {
+  margin: 0 !important;
+}
+
+@mixin type-pokemon-color($background-color, $border-color, $color) {
+  background-color: $background-color !important;
+  border-color: $border-color !important;
+  color: $color !important;
+}
+.poison {
+  @include type-pokemon-color(#b97fc9, whitesmoke, white);
+}
+
+.grass {
+  @include type-pokemon-color(#9bcc50, whitesmoke, white);
+}
+.fire {
+  @include type-pokemon-color(#e62829, whitesmoke, white);
+}
+.flying {
+  @include type-pokemon-color(#82baef, whitesmoke, white);
+}
+.water {
+  @include type-pokemon-color(#2980ef, whitesmoke, white);
+}
+.bug {
+  @include type-pokemon-color(#92a212, whitesmoke, white);
+}
+.normal {
+  @include type-pokemon-color(#9fa19f, whitesmoke, white);
+}
+.psychic {
+  @include type-pokemon-color(#9fa19f, whitesmoke, white);
+}
+.rock {
+  @include type-pokemon-color(#afa981, whitesmoke, white);
+}
+.dark {
+  @include type-pokemon-color(#50413f, whitesmoke, white);
+}
+//   #9bcc50plaanta
+.mat-mdc-standard-chip:not(.mdc-evolution-chip--disabled)
+  .mdc-evolution-chip__text-label {
+  background-color: transparent !important;
+  border-color: transparent !important;
+  color: inherit !important;
+}

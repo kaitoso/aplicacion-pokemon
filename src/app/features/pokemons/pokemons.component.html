@@ -1,0 +1,37 @@
+<div class="container-fluid">
+  <div class="row justify-content-center mt-5">
+    @for (pokemon of pokemons(); track pokemon.name) {
+    <div class="col-xl-4 col-sm-6 col-12 d-flex justify-content-center mb-4">
+      <mat-card class="example-card" appearance="outlined">
+        <mat-card-header>
+          <!-- <div mat-card-avatar class="example-header-image"></div> -->
+          <mat-card-title class="text-light">{{ pokemon.name }}</mat-card-title>
+          <mat-card-subtitle> n°: {{ pokemon.id }}</mat-card-subtitle>
+        </mat-card-header>
+        <img
+          mat-card-image
+          [src]="pokemon.sprites.other?.['official-artwork']?.front_default"
+          alt="Photo of a Shiba Inu"
+        />
+        <mat-card-content
+          class="d-flex align-items-center justify-content-center gap-3"
+        >
+          <p class="h3 text-light">Type:</p>
+          <mat-chip-set>
+            @for (type of pokemon.types; track type.slot) {
+            <mat-chip [ngClass]="type.type.name">{{ type.type.name }}</mat-chip>
+            }
+          </mat-chip-set>
+        </mat-card-content>
+      </mat-card>
+    </div>
+    }
+  </div>
+  <div class="row pb-5 mt-3">
+    <div class="col-12 text-center">
+      <div class="example-button-row">
+        <button mat-flat-button (click)="next()">Ver Más</button>
+      </div>
+    </div>
+  </div>
+</div>
